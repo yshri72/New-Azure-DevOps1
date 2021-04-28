@@ -215,7 +215,9 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
     storage_account_type = "Standard_LRS"
   }
 
-
+  tags = {
+    environment = "odacityenv"
+  }
   # depends_on = [azurerm_image.packerimage, ]
 }
 resource "azurerm_managed_disk" "vmmanagedisk" {
