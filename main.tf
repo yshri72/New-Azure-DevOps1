@@ -52,7 +52,7 @@ resource "azurerm_network_security_rule" "allow_access_from_intenet_80" {
   name                        = "HTTP_80"
   priority                    = 1001
   direction                   = "Inbound"
-  access                      = "Allow"
+  access                      = "Deny"
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = var.web_svc_port
@@ -66,7 +66,7 @@ resource "azurerm_network_security_rule" "allow_access_from_vm_on_subnet" {
   name                         = "access_from_same_subnet"
   priority                     = 1002
   direction                    = "Inbound"
-  access                       = "Allow"
+  access                       = "Deny"
   protocol                     = "Tcp"
   source_port_range            = "*"
   destination_port_range       = "*"
